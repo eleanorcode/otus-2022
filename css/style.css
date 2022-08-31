@@ -1,12 +1,26 @@
 body {
-  margin: 0;
+  width: 80%;
+  margin: 20px auto 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #c3c3c3;
 }
 
 h1,
 h2,
-h3,
-p {
-  margin: 0;
+h3 p {
+  margin: 20px 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+nav {
+  text-align: center;
+}
+
+button {
+  display: block;
+  margin: auto;
+  padding: 5px 20px;
 }
