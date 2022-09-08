@@ -1,11 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap');
+
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #c3c3c3;
+  font-family: 'Manrope', 'Tahoma', 'Open-Sans', 'Verdana', sans-serif;
 }
 
-h1,
-h2,
-h3 p {
-  margin: 0;
+/* normalized styles */
+
+a {
+  text-decoration: none;
+}
+
+
+h2 {
+  color: #fff;
+  text-align: center;
+  vertical-align: top;
+  margin: 0 auto 48px;
+  font-weight: 800;
+  line-height: 64px;
+  font-size: 48px;
+}
+
+h5 {
+  font-weight: 600;
+  line-height: 32px;
+  font-size: 24px;
+}
+
+p {
+  font-weight: 400;
+  line-height: 26px;
+  font-size: 16px;
+
+}
+
+/* main block */
+.services {
+  background: #0b0d17;
+  padding: 80px 0;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.services-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.services-flex__item {
+  width: 350px;
+  height: 346px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 40px 32px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+.services-flex__item>img {
+  margin-bottom: 56px;
+}
+
+.services-flex__item h5 {
+  margin: 0 0 12px;
+}
+
+.services-flex__item p {
+  margin: 0 0 40px;
+}
+
+/* link */
+.link-flex {
+  display: flex;
+  width: 68px;
+  height: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link-flex a {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  color: #8C30F5;
+}
+
+/* explore all */
+.button-flex {
+  display: flex;
+  justify-content: center;
+
+}
+
+button {
+  display: flex;
+  align-items: center;
+  background: #0b0d17;
+  padding: 16px 20px;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  box-shadow: 0px 0px 0px 1px #fff inset;
+}
+
+.button-flex img {
+  padding-left: 17px;
 }
