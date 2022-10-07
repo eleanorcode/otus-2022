@@ -86,7 +86,10 @@
       </div>
     </div>
   </section>
-
+  <footer>
+    <?php echo date('j F Y\, l\, h:i:s');
+?>
+  </footer>
 </body>
 
 </html>
