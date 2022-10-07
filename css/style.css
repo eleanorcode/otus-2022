@@ -2,6 +2,7 @@
 
 body {
   font-family: 'Manrope', 'Tahoma', 'Open-Sans', 'Verdana', sans-serif;
+  background: #0b0d17;
 }
 
 /* normalized styles */
@@ -131,6 +132,15 @@ button {
   h2 {
     max-width: 730px;
   }
+}
+
+footer {
+  background: #0b0d17;
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 30px;
 }
 
 @media screen and (max-width: 730px) {
