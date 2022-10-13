@@ -1,4 +1,4 @@
-<?php ?>
+<?php ;?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,8 +87,7 @@
     </div>
   </section>
   <footer>
-    <?php echo date('j F Y\, l\, h:i:s');
-?>
+    <?php echo date('Y'); ?>
   </footer>
 </body>
 
