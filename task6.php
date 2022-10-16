@@ -31,22 +31,24 @@
       maximus mollis molestie si letius ullamcorper quisque senectus..
     </p>
     <button>Button</button>
-    <!--unordered list-->
-    <div id='list-1'>
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 2</li>
-      </ul>
-    </div>
-    <!--ordered list-->
-    <div id='list-2'>
-      <ol>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 2</li>
-      </ol>
-    </div>
+     <?php
+
+echo "<div id='list-1'><ol>";
+
+$menu = [
+    '<li>Topic 1</li>' => ['<li>Article 1</li>', '<li>Article 2</li>'],
+    '<li>Topic 2</li>' => ['<li>Article 1</li>', '<li>Article 2</li>', '<li>Article 3</li>'],
+    '<li>Topic 3</li>' => ['<li>Article 1</li>'],
+];
+
+foreach ($menu as $key => $val) {
+    echo $key;
+    echo "<div id='list-2'><ul>";
+    echo implode($val);
+    echo '</ul></div>';
+}
+echo '</ol></div>';
+?>
 
     <a href="https://www.google.com/" target="_blank">Search with Google</a>
   </main>
