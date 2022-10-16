@@ -32,3 +32,12 @@ a[href*="google"] {
   font-size: 18px;
   color: #ED3A3B;
 }
+
+#list-1 {
+  text-transform: uppercase;
+}
+
+#list-2 li {
+  text-transform: lowercase;
+  list-style-type: disc
+}
