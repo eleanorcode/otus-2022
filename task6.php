@@ -33,21 +33,25 @@
     <button>Button</button>
      <?php
 
-echo "<div id='list-1'><ol>";
-
 $menu = [
-    '<li>Topic 1</li>' => ['<li>Article 1</li>', '<li>Article 2</li>'],
-    '<li>Topic 2</li>' => ['<li>Article 1</li>', '<li>Article 2</li>', '<li>Article 3</li>'],
-    '<li>Topic 3</li>' => ['<li>Article 1</li>'],
+    'Topic 1' => ['Article 1', 'Article 2'],
+    'Topic 2' => ['Article 1', 'Article 2', 'Article 3'],
+    'Topic 3' => ['Article 1'],
 ];
 
+echo "<div id='list-1'><ol>";
+
 foreach ($menu as $key => $val) {
-    echo $key;
+    echo '<li>' . $key . '</li>';
     echo "<div id='list-2'><ul>";
-    echo implode($val);
+
+    foreach ($val as $value) {
+        echo '<li>' . $value . '</li>';
+    }
     echo '</ul></div>';
 }
 echo '</ol></div>';
+
 ?>
 
     <a href="https://www.google.com/" target="_blank">Search with Google</a>
