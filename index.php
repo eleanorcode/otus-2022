@@ -1,3 +1,5 @@
+<?php ;?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,9 +14,24 @@
 
 <body>
   <header>Header</header>
-  <main></main>
+  <main>
+    <div class='images'>
+    <?php
+$dir = './img';
+$files = array_diff(scandir($dir), array('..', '.'));
+
+foreach ($files as $value) {
+
+    $image = "./img/$value";
+    echo '<a href="' . $image . '" target = "_blank"><img src="' . $image . '"></a>';
+}?>
+
+  </div>
+</main>
   <footer>Footer</footer>
   <script src="js/script.js"></script>
 </body>
 
 </html>
+
+
