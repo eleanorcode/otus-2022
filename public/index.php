@@ -18,12 +18,12 @@ require_once '../gallery.php';
   <header>Header</header>
   <main>
     <div class='images'>
-    <?php
+  <?php
 gallery();
 ?>
   </div>
 
-<form action = "upload.php" method="post" enctype="multipart/form-data">
+  <form action = "upload.php" method="post" enctype="multipart/form-data">
   <fieldset>
   <legend>Upload your photo:</legend>
   <label for="file">Photo:</label>
