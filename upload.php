@@ -15,7 +15,7 @@ function uploadPhotos()
 
             $file = $_FILES['file'];
 
-            $filename = 'img/' . uniqid() . '_' . $file['name'];
+            $filename = 'public/img/' . uniqid() . '_' . $file['name'];
             if (move_uploaded_file($file['tmp_name'], $filename)) {
                 $data['file'] = $filename;
             }
@@ -23,7 +23,9 @@ function uploadPhotos()
             $photos[] = $data;
 
             file_put_contents('photos.json', json_encode($photos));
-            header("Location: public/index.php");
+
+            header("Location: public");
+
             die();
 
         } else {
