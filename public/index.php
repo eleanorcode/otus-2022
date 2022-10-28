@@ -1,4 +1,5 @@
-<?php ;?>
+<?php
+require_once '../table.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,12 +14,32 @@
 </head>
 
 <body>
-  <header>Header</header>
   <main>
-    <h1>Hello</h1>
+ <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Title</th>
+          <th scope="col">Authors</th>
+          <th scope="col">Pages</th>
+          <th scope="col">Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php createTable();?>
+      </tbody>
+    </table>
+
+    <form action="search-page.php" method="post">
+      <fieldset>
+        <div class="mb-3">
+          <label for="text" class="form-label">Find authors or books in library:</label>
+          <input type="text" name="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </fieldset>
+    </form>
   </main>
-  <footer>Footer</footer>
-  <script src="js/bootstrap.min.js"></script>
 </body>
 
 </html>
