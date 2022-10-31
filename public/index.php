@@ -1,5 +1,6 @@
 <?php
-require_once '../table.php';?>
+require_once '../db.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +27,11 @@ require_once '../table.php';?>
         </tr>
       </thead>
       <tbody>
-        <?php createTable();?>
+        <?php
+foreach (getBooks() as $book) {
+    echo '<tr><th scope="row">' . $book['id'] . '</th><td>' . $book['title'] . '</td><td>' . $book['authors'] . '</td><td>' . $book['pages'] . '</td><td>' . $book['year'] . '</td></tr>';
+}
+?>
       </tbody>
     </table>
 
