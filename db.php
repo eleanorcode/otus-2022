@@ -16,7 +16,7 @@ function connect()
     return $pdo;
 }
 
-function getBooks()
+function getBooks(): array
 {
     $pdo = connect();
     $result = $pdo->query('select * from books order by id desc');
