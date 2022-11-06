@@ -1,45 +1,47 @@
 <?php
+require_once 'resize.php';
+
+session_start();
 
 function uploadPhotos()
 {
-    $photos = [];
-    $result = '';
+    if (empty($_SESSION['token'])) {
+        header('Location: public/login.php');
+    } else {
 
-    if (file_exists('photos.json')) {
-        $photos = json_decode(file_get_contents('photos.json'), true);
-    }
+        $result = '';
 
-    if ($_FILES['file']['size'] > 0) {
-        $mimetype = mime_content_type($_FILES['file']['tmp_name']);
+        if ($_FILES['file']['size'] > 0) {
+            $mimetype = mime_content_type($_FILES['file']['tmp_name']);
 
-        if (in_array($mimetype, array('image/jpeg', 'image/jpg'))) {
+            if (in_array($mimetype, array('image/jpeg', 'image/jpg'))) {
 
-            $file = $_FILES['file'];
+                $file = $_FILES['file'];
 
-            $filename = 'public/img/' . uniqid() . '_' . $file['name'];
-            if (move_uploaded_file($file['tmp_name'], $filename)) {
-                $data['file'] = $filename;
+                $filename = uniqid() . '_' . $file['name'];
+                $fullimage = 'public/img/' . $filename;
+
+                move_uploaded_file($file['tmp_name'], $fullimage);
+
+                $miniature = resizeImage($fullimage, 100, 100);
+                imagejpeg($miniature, 'public/mini/' . $filename);
+
+                $result = '<div style="margin-top:50px;font-size:22px;
+text-align:center;">' . 'Your image have been uploaded!' . '</div>';
+
+            } else {
+
+                $result = '<div style="margin-top:50px;font-size:22px;color:#f00;
+text-align:center;">' . 'Upload an image in jpg/jpeg format, please' . '</div>';
+
             }
 
-            $photos[] = $data;
-
-            file_put_contents('photos.json', json_encode($photos));
-
-            $result = '<div style="margin-top:50px;font-size:22px;
-  text-align:center;">' . 'Your image have been uploaded!' . '</div>';
-
         } else {
-
             $result = '<div style="margin-top:50px;font-size:22px;color:#f00;
-  text-align:center;">' . 'Upload an image in jpg/jpeg format, please' . '</div>';
-
+text-align:center;">' . 'Upload an image, please' . '</div>';
         }
-
-    } else {
-        $result = '<div style="margin-top:50px;font-size:22px;color:#f00;
-  text-align:center;">' . 'Upload an image, please' . '</div>';
+        return $result;
     }
-    return $result;
 }
 
 $result = uploadPhotos();
