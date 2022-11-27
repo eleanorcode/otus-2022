@@ -14,7 +14,15 @@ if ($arr[0] !== 0) {
     $images = uploadPhotos($size);
 }
 
-addBook($title, $author, $pages, $year, $images);
+if (!empty($images) && $images[0] === 'type is depricated') {
+    echo '<div style="margin-top:50px;font-size:22px;color:#f00;
+text-align:center;">' . 'Upload an image in jpg/jpeg format, please' . '</div>';
+}
+
+$result = addBook($title, $author, $pages, $year, $images);
+
+echo '<div style="margin-top:50px;font-size:22px;
+text-align:center;">' . $result . '</div>';
 
 echo '<div style="margin-top:20px;font-size:20px;
 text-align:center;"><a href="index.php">Return to the library</a></div>';
