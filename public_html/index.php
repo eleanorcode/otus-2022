@@ -14,7 +14,7 @@ if (empty($_SESSION['token'])) {
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <title>Document</title>
+  <title>Library</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
@@ -26,8 +26,12 @@ if (empty($_SESSION['token'])) {
       <h4>Добро пожаловать, <?php echo $_SESSION['username']; ?>!</h4>
     </div>
 
-    <?php addBooksButton($_SESSION['username']);?>
-
+    <?php
+$isAdmin = addBooksButton($_SESSION['username']);
+if (!empty($isAdmin)) {
+    echo '<div id="add-books"><a class="btn btn-warning" href="add-book-page.php" role="button">Add the books to the library</a></div>';
+}
+?>
     <table class="table table-striped">
       <thead>
         <tr>
